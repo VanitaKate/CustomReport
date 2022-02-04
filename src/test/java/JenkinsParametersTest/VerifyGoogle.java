@@ -14,7 +14,7 @@ public void definebrowser() {
 }
 @Test
 	public void OpenGoogle( ) {
-	String Browser=System.setProperty("Browser", "Chrome");
+	String Browser=System.getProperty("Browser");
 System.out.println(Browser);
 		if (Browser.contains("Chrome")){
 			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
