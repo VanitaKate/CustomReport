@@ -15,7 +15,7 @@ public void definebrowser() {
 @Test
 	public void OpenGoogle( ) {
 	String Browser=System.getProperty("Browser");
-System.out.println(Browser);
+System.out.println("###########################" +Browser+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		if (Browser.contains("Chrome")){
 			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
 			driver=new ChromeDriver();
@@ -25,7 +25,7 @@ System.out.println(Browser);
 			
 		}
 		driver.get("https://google.co.in");
-		System.out.println("Multi Browser Test************************===================================================================");
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Multi Browser Test************************===================================================================");
 	}
 
 }
