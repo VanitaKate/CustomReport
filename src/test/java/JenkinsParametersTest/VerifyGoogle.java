@@ -24,12 +24,13 @@ public void definebrowser() {
 		sauceCap.setCapability("platform", "Windows 10");
 		sauceCap.setCapability("version", "latest");
 		DesiredCapabilities caps=new DesiredCapabilities();
-		caps.setCapability("sauce:options", sauceCap);	
-		caps.setCapability("browserName", Browser);
+	caps.setCapability("sauce:options", sauceCap);
 		System.out.println("Browser Name is :    ***************"+Browser+"**************");
 
 		if (Browser.contains("chrome")) {
 			WebDriverManager.chromedriver().setup();
+			
+			caps.setCapability("browserName", "chrome");
 		}
 		driver = new RemoteWebDriver(new URL("https://"+User_Name+":"+AccessKey+"@ondemand.eu-central-1.saucelabs.com:443/wd/hub"), caps);	
 
