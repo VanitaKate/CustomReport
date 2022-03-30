@@ -134,5 +134,12 @@
     			<version>2.3.0</version>
     			<scope>runtime</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/ru.sbtqa/webdrivermanager -->
+<dependency>
+    <groupId>ru.sbtqa</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>2.2.2</version>
+</dependency>
+
 	</dependencies>
 </project>
