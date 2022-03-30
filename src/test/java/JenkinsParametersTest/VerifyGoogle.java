@@ -14,6 +14,8 @@ public class VerifyGoogle {
 	public String User_Name;
 	public String AccessKey;
 	public String hub;
+	private SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication("oauth-vani_ket-3e468", "8e176690-ece8-423e-846d-3910030becb6");
+    private SauceREST client = new SauceREST(authentication.getUsername(), authentication.getAccessKey());
 public WebDriver driver;
 
 @BeforeMethod
@@ -44,7 +46,7 @@ public void definebrowser(String Browser) {
 
 
 		driver.get("Https://google.com");
-		System.out.println(driver.getCurrentUrl());
+		System.out.println(driver.getCurrentUrl()+"$$$$$$$$$$$$$$$$$$$$$$$$");
 }
 //@Test
 	public void OpenGoogle( ) {
