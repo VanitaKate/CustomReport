@@ -26,6 +26,11 @@ public void definebrowser() {
 		DesiredCapabilities caps=new DesiredCapabilities();
 		caps.setCapability("sauce:options", sauceCap);	
 		caps.setCapability("browserName", Browser);
+		System.out.println("Browser Name is :    ***************"+Browser+"**************");
+
+		if (Browser.contains("chrome")) {
+			WebDriverManager.chromedriver().setup();
+		}
 		driver = new RemoteWebDriver(new URL("https://"+User_Name+":"+AccessKey+"@ondemand.eu-central-1.saucelabs.com:443/wd/hub"), caps);	
 
 		System.out.println("Browser Name is :    ***************"+Browser+"**************");
@@ -39,7 +44,7 @@ public void definebrowser() {
 		driver.get("Https://google.com");
 		System.out.println(driver.getCurrentUrl());
 }
-@Test
+//@Test
 	public void OpenGoogle( ) {
 	String Browser=System.getProperty("Browser");
 System.out.println("###########################" +Browser+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
