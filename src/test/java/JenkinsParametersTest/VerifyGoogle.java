@@ -4,7 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
 public class VerifyGoogle {   
 	protected RemoteWebDriver Rdriver;
 	public static WebDriverWait wait;
@@ -15,7 +16,7 @@ public class VerifyGoogle {
 	public String hub;
 public WebDriver driver;
 
-@BeforeTest
+@BeforeMethod
 public void definebrowser(String Browser) {
 
 		MutableCapabilities sauceCap=new MutableCapabilities();
@@ -32,10 +33,10 @@ public void definebrowser(String Browser) {
 			
 			caps.setCapability("browserName", "chrome");
 		}
-		driver = new RemoteWebDriver(new URL("https://"+User_Name+":"+AccessKey+"@ondemand.eu-central-1.saucelabs.com:443/wd/hub"), caps);	
+//		driver = new RemoteWebDriver(new URL("https://"+User_Name+":"+AccessKey+"@ondemand.eu-central-1.saucelabs.com:443/wd/hub"), caps);	
 
 		System.out.println("Browser Name is :    ***************"+Browser+"**************");
-
+		driver = new RemoteWebDriver(new URL("https://@ondemand.eu-central-1.saucelabs.com:443/wd/hub"), caps);
 //		sauceOptions.put("name", testInfo.getDisplayName());
 
 //		options.setCapability("sauce:options", sauceOptions);
@@ -60,5 +61,9 @@ System.out.println("###########################" +Browser+"@@@@@@@@@@@@@@@@@@@@@
 		driver.get("https://google.co.in");
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Multi Browser Test************************===================================================================");
 	}
+	   @AfterMethod
+    public void tearDown() throws Exception {
+        driver.quit();
+    }
 
 }
