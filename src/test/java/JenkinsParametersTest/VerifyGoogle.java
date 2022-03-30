@@ -16,8 +16,8 @@ public class VerifyGoogle {
 public WebDriver driver;
 
 @BeforeTest
-public void definebrowser() {
-		Browser=System.getProperty("Browser");
+public void definebrowser(String Browser) {
+//		Browser=System.getProperty("Browser");
 		MutableCapabilities sauceCap=new MutableCapabilities();
 		String User_Name="oauth-vani_ket-3e468";
 		String AccessKey="8e176690-ece8-423e-846d-3910030becb6";
