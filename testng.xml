@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" name="Test">
+      <parameter name="Browser" value="chrome"/>
     <classes>
       <class name="JenkinsParametersTest.VerifyGoogle"/>
     </classes>
