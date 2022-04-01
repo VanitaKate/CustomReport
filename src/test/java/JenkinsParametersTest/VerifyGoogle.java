@@ -18,8 +18,9 @@ public class VerifyGoogle {
     private SauceREST client = new SauceREST(authentication.getUsername(), authentication.getAccessKey());
 public WebDriver driver;
 
-@BeforeMethod
+@Test
 public void definebrowser(String Browser) {
+			System.out.println("Browser Name is :    ***************"+Browser+"**************");
 
 		MutableCapabilities sauceCap=new MutableCapabilities();
 		String User_Name="oauth-vani_ket-3e468";
@@ -63,7 +64,7 @@ System.out.println("###########################" +Browser+"@@@@@@@@@@@@@@@@@@@@@
 		driver.get("https://google.co.in");
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Multi Browser Test************************===================================================================");
 	}
-	   @AfterMethod
+	   @TearDown
     public void tearDown() throws Exception {
         driver.quit();
     }
