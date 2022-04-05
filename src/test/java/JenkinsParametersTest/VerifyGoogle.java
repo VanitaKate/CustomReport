@@ -35,6 +35,10 @@ public void definebrowser(String Browser) {
 //		browserOptions.setPlatformName("Windows 10");
 //		browserOptions.setBrowserVersion("latest");
 	DesiredCapabilities caps=new DesiredCapabilities();
+	caps.setBrowserName(System.getenv("SAUCE_ONDEMAND_BROWSERS"));
+caps.setVersion(System.getenv("SAUCE_ONDEMAND_BROWSERS"));
+caps.setCapability(CapabilityType.PLATFORM, System.getenv("SAUCE_ONDEMAND_BROWSERS"));
+caps.setCapability(build, System.getenv("SAUCE_BUILD_NAME"));
 //		caps.setCapability("sauce:options", sauceCap);	
 		caps.setCapability("browserName", Browser);
 		caps.setCapability("platform", "Windows 10");
