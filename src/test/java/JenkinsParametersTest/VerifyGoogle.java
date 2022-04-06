@@ -64,7 +64,11 @@ caps.setCapability(build, System.getenv("SAUCE_BUILD_NAME"));*/
 			caps.setCapability("sauce:options", sauceCap);	
 			caps.setCapability("browserName", Browser);
 		}
-		driver = new RemoteWebDriver(new URL("https://"+User_Name+":"+AccessKey+"@ondemand.eu-central-1.saucelabs.com:443/wd/hub"), caps);	
+	try{
+		driver = new RemoteWebDriver(new URL("https://"+User_Name+":"+AccessKey+"@ondemand.eu-central-1.saucelabs.com:443/wd/hub"), caps);
+	}catch(Exception e){
+	 	
+	}
 //		driver = new RemoteWebDriver(new URL("https://@ondemand.eu-central-1.saucelabs.com:443/wd/hub"), caps);
 
 //		sauceOptions.put("name", testInfo.getDisplayName());
