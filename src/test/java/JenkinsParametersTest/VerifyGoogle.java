@@ -6,7 +6,9 @@ import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.MutableCapabilities;
-import org.openqa.selenium.WebDriver;
+iimport org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -18,6 +20,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 public class VerifyGoogle {   
 
 
@@ -46,10 +49,10 @@ public void definebrowser(String Browser) {
 //		browserOptions.setPlatformName("Windows 10");
 //		browserOptions.setBrowserVersion("latest");
 	DesiredCapabilities caps=new DesiredCapabilities();
-	caps.setBrowserName(System.getenv("SAUCE_ONDEMAND_BROWSERS"));
+/*	caps.setBrowserName(System.getenv("SAUCE_ONDEMAND_BROWSERS"));
 caps.setVersion(System.getenv("SAUCE_ONDEMAND_BROWSERS"));
 caps.setCapability(CapabilityType.PLATFORM, System.getenv("SAUCE_ONDEMAND_BROWSERS"));
-caps.setCapability(build, System.getenv("SAUCE_BUILD_NAME"));
+caps.setCapability(build, System.getenv("SAUCE_BUILD_NAME"));*/
 //		caps.setCapability("sauce:options", sauceCap);	
 		caps.setCapability("browserName", Browser);
 		caps.setCapability("platform", "Windows 10");
