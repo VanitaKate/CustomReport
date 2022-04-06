@@ -8,15 +8,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 public class VerifyGoogle {   
-	protected RemoteWebDriver Rdriver;
-	public static WebDriverWait wait;
+
+
 	public static String Browser;
 	public static String BrowserName;
 	public String User_Name;
 	public String AccessKey;
 	public String hub;
-	private SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication("oauth-vani_ket-3e468", "8e176690-ece8-423e-846d-3910030becb6");
-    private SauceREST client = new SauceREST(authentication.getUsername(), authentication.getAccessKey());
+//	private SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication("oauth-vani_ket-3e468", "8e176690-ece8-423e-846d-3910030becb6");
+//   private SauceREST client = new SauceREST(authentication.getUsername(), authentication.getAccessKey());
 public WebDriver driver;
 @Parameters({"Browser"})
 @Test
