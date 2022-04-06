@@ -17,8 +17,8 @@ public class VerifyGoogle {
 	public String hub;
 //	private SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication("oauth-vani_ket-3e468", "8e176690-ece8-423e-846d-3910030becb6");
 //   private SauceREST client = new SauceREST(authentication.getUsername(), authentication.getAccessKey());
-public WebDriver driver;
-@Parameters({"Browser"})
+public WebDriver driver
+//@Parameters({"Browser"})
 @Test
 public void definebrowser(String Browser) {
 //		Browser=System.getProperty("Browser");
