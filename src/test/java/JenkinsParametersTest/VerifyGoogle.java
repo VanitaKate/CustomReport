@@ -60,7 +60,7 @@ caps.setCapability(build, System.getenv("SAUCE_BUILD_NAME"));*/
 		System.out.println("Browser Name is :    ***************"+Browser+"**************");
 
 		if (Browser.contains("chrome")) {
-			WebDriverManager.chromedriver().setup();
+			
 			caps.setCapability("sauce:options", sauceCap);	
 			caps.setCapability("browserName", Browser);
 		}
