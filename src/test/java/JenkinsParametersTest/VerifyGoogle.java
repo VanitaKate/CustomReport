@@ -1,5 +1,6 @@
 package JenkinsParametersTest;
-
+import org.openqa.selenium.JavascriptExecutor;
+import org.testng.ITestResult;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -98,7 +99,12 @@ System.out.println("###########################" +Browser+"@@@@@@@@@@@@@@@@@@@@@
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Multi Browser Test************************===================================================================");
 	}
 	   @AfterTest
-    public void tearDown() throws Exception {
+    public void tearDown(ITestResult Result) throws Exception {
+	    	String status=Result.isSuccess()?"passed" : "failed";
+
+System.out.println(Result.getName() +": " +status+"~~~~~~~~~~~~~~~~~~");
+((JavascriptExecutor) driver).executeScript("sauce:job-result=" +status);
+	wait(3000);
         driver.quit();
     }
 
