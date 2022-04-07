@@ -100,11 +100,18 @@ System.out.println("###########################" +Browser+"@@@@@@@@@@@@@@@@@@@@@
 	}
 	   @AfterTest
     public void tearDown(ITestResult Result) throws Exception {
-	    	String status=Result.isSuccess()?"passed" : "failed";
+	String status=Result.isSuccess()?"passed" : "failed";
 
-System.out.println(Result.getName() +": " +status+"~~~~~~~~~~~~~~~~~~");
-((JavascriptExecutor) driver).executeScript("sauce:job-result=" +status);
-	wait(3000);
+
+	if(Result.isSuccess()) {
+		System.out.println(Result.getName() +": "+"session ID: "+Result.getSkipCausedBy() +status+"~~~~~~~~~~~~~~~~~~");
+		((JavascriptExecutor) driver).executeScript("sauce:job-result=passed");
+		
+	}else {
+		System.out.println(Result.getName() +": "+"session ID: "+Result.getSkipCausedBy() +status+"~~~~~~~~~~~~~~~~~~");
+		((JavascriptExecutor) driver).executeScript("sauce:job-result=failed");
+	}
+	
         driver.quit();
     }
 
