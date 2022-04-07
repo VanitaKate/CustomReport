@@ -16,7 +16,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -98,7 +98,7 @@ System.out.println("###########################" +Browser+"@@@@@@@@@@@@@@@@@@@@@
 		driver.get("https://google.co.in");
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Multi Browser Test************************===================================================================");
 	}
-	   @AfterTest
+	   @AfterMethod
     public void tearDown(ITestResult Result) throws Exception {
 	String status=Result.isSuccess()?"passed" : "failed";
 
